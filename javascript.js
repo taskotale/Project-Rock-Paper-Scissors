@@ -1,18 +1,19 @@
 // random selection for computer 
+
 function getComputerSelection(){
     const possibleChoices = ['rock','paper','scissors'];
     const randomChoice = possibleChoices[Math.floor(Math.random()*possibleChoices.length)];
     return randomChoice;
 }
 
-
-
-// making a viable choice, checking if can be used
+// making a viable choice for user/player
 
 function getPlayerSelection () {
     let playerChoice = prompt('Type your choice', 'Rock, Paper or Scissors').toLowerCase();
     return playerChoice
 }
+
+// checking if selection is valid
 
 function checkPlayerSelection (validChoice) {
     if (validChoice !== 'rock' && validChoice !== 'paper' && validChoice !== 'scissors') {
@@ -23,10 +24,7 @@ function checkPlayerSelection (validChoice) {
     return playerChoice
 }
 
-
-
-//comparing selections, finding the round winner
-
+//comparing selections, finding the round winner per round
 
 function getRoundWinner (playerInput,computerInput){
     if (playerInput===computerInput) {
@@ -39,6 +37,8 @@ function getRoundWinner (playerInput,computerInput){
         console.log(`comp wins, ${computerInput} beats ${playerInput}`);
     }
 }    
+
+// a game made of 5 rounds
 
     for (let i = 0; i<5; i++){
         let computerSelection = getComputerSelection();

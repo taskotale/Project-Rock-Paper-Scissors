@@ -27,14 +27,15 @@ function checkPlayerSelection(validChoice) {
 //comparing selections, finding the winner per round
 
 function getRoundWinner(playerInput, computerInput) {
+    let roundResult;
     if (playerInput === computerInput) {
-        console.log('it\'s a tie');
+        return roundResult = 'it\'s a tie';
     } else if (playerInput === 'rock' && computerInput === 'scissors' ||
         playerInput === 'paper' && computerInput === 'rock' ||
         playerInput === 'scissors' && computerInput === 'paper') {
-        console.log(`player wins, ${playerInput} beats ${computerInput}`)
+        return roundResult = `player wins, ${playerInput} beats ${computerInput}`
     } else {
-        console.log(`comp wins, ${computerInput} beats ${playerInput}`);
+        return roundResult = `comp wins, ${computerInput} beats ${playerInput}`;
     }
 }
 
@@ -44,7 +45,7 @@ for (let i = 1; i <= 5; i++) {
     console.log(i);
     let computerSelection = getComputerSelection();
     let playerSelection = checkPlayerSelection(getPlayerSelection());
-    console.log(playerSelection, computerSelection);
-    getRoundWinner(playerSelection, computerSelection);
+    console.log('player: ' + playerSelection + '; computer: ' + computerSelection);
+    console.log(getRoundWinner(playerSelection, computerSelection));
 }
 

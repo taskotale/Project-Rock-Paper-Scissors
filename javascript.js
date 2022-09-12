@@ -24,7 +24,7 @@ function checkPlayerSelection(validChoice) {
     return playerChoice
 }
 
-//comparing selections, finding the round winner per round
+//comparing selections, finding the winner per round
 
 function getRoundWinner(playerInput, computerInput) {
     if (playerInput === computerInput) {
@@ -40,10 +40,11 @@ function getRoundWinner(playerInput, computerInput) {
 
 // a game made of 5 rounds
 
-for (let i = 0; i < 5; i++) {
+for (let i = 1; i <= 5; i++) {
+    console.log(i);
     let computerSelection = getComputerSelection();
     let playerSelection = checkPlayerSelection(getPlayerSelection());
-    getRoundWinner(playerSelection, computerSelection);
     console.log(playerSelection, computerSelection);
+    getRoundWinner(playerSelection, computerSelection);
 }
 

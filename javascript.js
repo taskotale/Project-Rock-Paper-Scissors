@@ -2,14 +2,15 @@ let playerSelection = prompt('Type your choice', 'Rock, Paper or Scissors').toLo
 
 // making a viable choice
 
-function checkPlayerSelection () {
-    if (playerSelection === 'rock' || playerSelection === 'paper' || playerSelection === 'scissors') {
-    } else {
-    playerSelection = prompt('not supported, please choose:', 'Rock, Paper or Scissors').toLowerCase();
-    checkPlayerSelection();
+function checkPlayerSelection (signChoice) {
+    if (signChoice !== 'rock' && signChoice !== 'paper' && signChoice !== 'scissors') {
+        signChoice = prompt('not supported, please choose:', 'Rock, Paper or Scissors').toLowerCase();
+    checkPlayerSelection(signChoice); 
     }
+    playerSelection=signChoice;
 }
-checkPlayerSelection();
+
+checkPlayerSelection(playerSelection);
 
 // random selection for computer 
 
@@ -20,25 +21,19 @@ console.log(playerSelection, computerSelection);
 
 //comparing selections, finding the winner
 
-function getRoundWinner() {
-    switch (playerSelection, computerSelection){
-        case 'rock','scissors': console.log ('player wins')
-        break;
-        case 'rock', 'paper': console.log('computer wins');
-        break;
-        case 'paper', 'scissors': console.log('computer wins');
-        break;
-        case 'paper', 'rock': console.log('player wins');
-        break;
-        case 'scissors', 'paper': console.log('player wins');
-        break;
-        case 'scissors', 'rock': console.log('computer wins');
-        break;
-        default: console.log('it is a tie');
+
+function getRoundWinner (playerInput,computerInput){
+    if (playerInput===computerInput) {
+        console.log('it\'s a tie')
+    } else if (playerInput==='rock' && computerInput==='scissors'|| 
+                playerInput==='paper' && computerInput==='rock'||
+                playerInput==='scissors' && computerInput==='paper') {
+        console.log('player wins')
+    } else {
+        console.log('comp wins');
     }
-}
-getRoundWinner();
-        
+}    
+getRoundWinner(playerSelection,computerSelection);
         
 
 

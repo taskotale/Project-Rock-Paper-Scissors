@@ -1,7 +1,8 @@
+const possibleChoices = ['rock', 'paper', 'scissors'];
+
 // random selection for computer 
 
 function getComputerSelection() {
-    const possibleChoices = ['rock', 'paper', 'scissors'];
     const randomChoice = possibleChoices[Math.floor(Math.random() * possibleChoices.length)];
     return randomChoice;
 }
@@ -27,16 +28,16 @@ function checkPlayerSelection(validChoice) {
 //comparing selections, finding the winner per round
 
 function getRoundWinner(playerInput, computerInput) {
-    let roundResult;
+    let roundResult = '';
     if (playerInput === computerInput) {
         return roundResult = 'it\'s a tie';
-    } else if (playerInput === 'rock' && computerInput === 'scissors' ||
+    }
+    if (playerInput === 'rock' && computerInput === 'scissors' ||
         playerInput === 'paper' && computerInput === 'rock' ||
         playerInput === 'scissors' && computerInput === 'paper') {
         return roundResult = `player wins, ${playerInput} beats ${computerInput}`
-    } else {
-        return roundResult = `comp wins, ${computerInput} beats ${playerInput}`;
     }
+    return roundResult = `comp wins, ${computerInput} beats ${playerInput}`;
 }
 
 // a game made of 5 rounds

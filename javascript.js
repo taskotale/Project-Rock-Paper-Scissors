@@ -3,27 +3,26 @@ const possibleChoices = ['rock', 'paper', 'scissors'];
 // random selection for computer 
 
 function getComputerSelection() {
-    const randomChoice = possibleChoices[Math.floor(Math.random() * possibleChoices.length)];
-    return randomChoice;
+    const computerSelection = possibleChoices[Math.floor(Math.random() * possibleChoices.length)];
+    return computerSelection;
 }
 
-// making a viable choice for user/player
 
-function getPlayerSelection() {
-    let playerChoice = prompt('Type your choice', 'Rock, Paper or Scissors').toLowerCase();
-    return playerChoice
+let playerSelection = document.querySelector('#options').addEventListener('click', function (e) {
+    playerSelection = (e.target.name);
+    showRoundWinner();
+})
+
+
+const roundWinnerContainer = document.querySelector('#round-winner');
+const roundWinner = document.createElement('p');
+
+function showRoundWinner(){
+    const roundResult = getRoundWinner(playerSelection, getComputerSelection());
+    roundWinner.textContent = roundResult;
+    roundWinnerContainer.appendChild(roundWinner);
 }
 
-// checking if selection is valid
-
-function checkPlayerSelection(validChoice) {
-    if (validChoice !== 'rock' && validChoice !== 'paper' && validChoice !== 'scissors') {
-        validChoice = prompt('not supported, please choose:', 'Rock, Paper or Scissors').toLowerCase();
-        checkPlayerSelection(validChoice);
-    };
-    playerChoice = validChoice;
-    return playerChoice
-}
 
 //comparing selections, finding the winner per round
 
@@ -39,14 +38,3 @@ function getRoundWinner(playerInput, computerInput) {
     }
     return roundResult = `comp wins, ${computerInput} beats ${playerInput}`;
 }
-
-// a game made of 5 rounds
-
-for (let i = 1; i <= 5; i++) {
-    console.log(i);
-    let computerSelection = getComputerSelection();
-    let playerSelection = checkPlayerSelection(getPlayerSelection());
-    console.log('player: ' + playerSelection + '; computer: ' + computerSelection);
-    console.log(getRoundWinner(playerSelection, computerSelection));
-}
-

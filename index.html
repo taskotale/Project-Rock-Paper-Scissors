@@ -9,17 +9,22 @@
 <body>
     <header>
         <h1> Play Rock, Paper, Scissors!!</h1>
-        <h3> Choose wisely!</h3>
+        <div id="round-counter"> 
+            <p>Choose wisely!</p>
+        </div>
     </header>
     <div id="options">
-        <div><button name="rock" id="rock">--Rock</button></div>
-        <div><button name="paper" id="paper">--Paper</button></div>
-        <div><button name="scissors" id="scissors">--Scissors</button></div>
+        <div><button name="rock" id="rock">Rock</button></div>
+        <div><button name="paper" id="paper">Paper</button></div>
+        <div><button name="scissors" id="scissors">Scissors</button></div>
     </div>
     <div id="round-winner">Round Winner
     </div>
-    <div id="current-score">Current Score</div>
-    <div id="winner">And the winner is...</div>
+    <div id="current-score">
+        <p>Player Score:<p id="player-score">0</p>
+        <p>Computer Score:<p id="computer-score">0</p>
+    </div>
+    <div id="winner"></div>
     <footer>Made by tahir mujic</footer>
     
 <script src="javascript.js"></script>

@@ -22,7 +22,7 @@ function getPlayerDetails() {
 
 //make changes on screen show/hide
 
-function showGame () {
+function showGame() {
     document.querySelector('#start-game').classList.add("hide-start-game");
     document.querySelector('#game-container').classList.remove('hide-game-container');
     document.querySelector('#options').classList.remove('options-hidden');
@@ -45,6 +45,7 @@ let playerSelection = document.querySelector('#options').addEventListener('click
 
 const roundWinnerContainer = document.querySelector('#round-winner');
 const roundWinner = document.createElement('p');
+roundWinner.classList.add('round-score');
 
 function showRoundWinner() {
     const roundResult = getRoundWinner(playerSelection, getComputerSelection());

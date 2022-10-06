@@ -1,0 +1,138 @@
+html {
+    font-family: 'Architects Daughter';
+    height: 100vw;
+}
+
+body,
+p,
+h1 {
+    padding: 0;
+    margin: 0;
+}
+body {
+    background-color: black;
+}
+
+header {
+    text-align: center;
+    font-size: medium;
+    background-color: rgb(65, 145, 202);
+    padding: 1rem;
+    margin-bottom: 5px;
+}
+
+footer {
+    background-color: rgb(65, 145, 202);
+    padding: 0.25rem;
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+
+.hide-game-container {
+    display: none;
+}
+
+.hide-start-game {
+    display: none;
+}
+
+#start-game {
+    text-align: center;
+}
+
+
+input {
+    width: 20rem;
+    margin-top: 1rem;
+    font-family: inherit;
+    font-weight: 900;
+    border-radius: 5px;
+    text-align: center;
+    border: solid
+}
+
+#btn-start {
+    margin: 3em 0;
+    padding: 2rem;
+    font-family: inherit;
+    font-weight: 900;
+    border-radius: 10px;
+    border: solid;
+}
+
+img {
+    border-radius: 10px;
+    width: 98vw;
+    border: solid 0.5vw yellow;
+}
+
+#options {
+    height: 300px;
+    overflow: hidden;
+}
+.options-hidden button{
+    display: none;
+}
+
+#rock {
+    background-color: aliceblue;
+    border-radius: 10px;
+    height: 200px;
+    width: 105px;
+    opacity: 20%;
+    transform: translateY(-260px)translateX(25px);
+}
+
+#scissors {
+    background-color: rgb(186, 26, 93);
+    height: 200px;
+    border-radius: 10px;
+    width: 120px;
+    opacity: 20%;
+    transform: translateY(-260px)translateX(-92px);
+}
+
+#paper {
+    background-color: rgb(28, 116, 194);
+    height: 200px;
+    border-radius: 10px;
+    width: 110px;
+    opacity: 20%;
+    z-index: 99;
+    transform: translateY(-260px)translateX(148px);
+}
+
+#round-counter,
+#round-winner,
+#current-score {
+    text-align: center;
+    color: rgb(65, 145, 202);
+    font-weight: bolder;
+    font-size: 25px;
+}
+#winner {
+    text-align: center;
+    color: rgb(186, 26, 93);
+    font-weight: bolder;
+    font-size: 30px;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+    box-shadow: 5px rgb(186, 26, 93);
+    border-radius: 5px;
+    padding: 3px;
+}
+
+.reset-button {
+    padding: 1rem;
+    background-color: rgb(65, 145, 202);
+    border-radius: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-top: 10px;
+    border-color: solid rgb(186, 26, 93);
+}

@@ -1,3 +1,33 @@
+const startBtn = document.querySelector('#btn-start').addEventListener('click', getPlayerDetails);
+let playerName = '';
+const setName = document.querySelector('#set-name')
+setName.textContent = playerName;
+let playingUntil = '';
+
+
+function getPlayerDetails() {
+    const numberOfRounds = document.getElementById('number-of-rounds').value;
+    const playerNameInput = document.getElementById('player-name').value;
+    if ((numberOfRounds) === '') {
+        return alert('Please insert until what score you want to play!')
+    }
+    if ((playerNameInput) === '') {
+        return alert('Please enter your name!')
+    }
+    playerName = playerNameInput;
+    playingUntil = parseInt(numberOfRounds);
+    setName.textContent = playerName;
+    showGame()
+}
+
+//make changes on screen show/hide
+
+function showGame () {
+    document.querySelector('#start-game').classList.add("hide-start-game");
+    document.querySelector('#game-container').classList.remove('hide-game-container');
+    document.querySelector('#options').classList.remove('options-hidden');
+}
+
 const possibleChoices = ['rock', 'paper', 'scissors'];
 
 // random selection for computer 
@@ -10,6 +40,7 @@ function getComputerSelection() {
 let playerSelection = document.querySelector('#options').addEventListener('click', function (e) {
     playerSelection = (e.target.name);
     showRoundWinner();
+
 })
 
 const roundWinnerContainer = document.querySelector('#round-winner');
@@ -17,7 +48,7 @@ const roundWinner = document.createElement('p');
 
 function showRoundWinner() {
     const roundResult = getRoundWinner(playerSelection, getComputerSelection());
-    roundWinner.textContent = roundResult;
+    roundWinner.innerText = `Round Winner:\n ${roundResult}`;
     roundWinnerContainer.appendChild(roundWinner);
     countRounds();
 }
@@ -27,16 +58,16 @@ let winnerDetector = '';
 function getRoundWinner(playerInput, computerInput) {
     let roundResult = '';
     if (playerInput === computerInput) {
-        return roundResult = 'it\'s a tie';
+        return roundResult = 'it\'s a tie!';
     }
     if (playerInput === 'rock' && computerInput === 'scissors' ||
         playerInput === 'paper' && computerInput === 'rock' ||
         playerInput === 'scissors' && computerInput === 'paper') {
         winnerDetector = 'p';
-        return roundResult = `player wins, ${playerInput} beats ${computerInput}`;
+        return roundResult = `${playerName} wins, ${playerInput} beats ${computerInput}`;
     }
     winnerDetector = 'c';
-    return roundResult = `comp wins, ${computerInput} beats ${playerInput}`;
+    return roundResult = `Computer wins, ${computerInput} beats ${playerInput}`;
 }
 
 let roundCounter = document.querySelector('#round-counter');
@@ -47,7 +78,6 @@ function countRounds() {
     countRoundWinner();
 }
 
-//let currentScore = document.querySelector('#current-score');
 let playerScoreCount = 0;
 let computerScoreCount = 0;
 
@@ -59,7 +89,7 @@ function countRoundWinner() {
         computerScoreCount += 1;
     }
     showCurrentScore();
-    getGameWinner();
+    getGameWinner(playingUntil);
 }
 
 let playerScore = document.querySelector('#player-score');
@@ -73,17 +103,17 @@ function showCurrentScore() {
 
 let gameWinner = document.querySelector('#winner');
 const resetButton = document.createElement('BUTTON');
-resetButton.textContent = 'Start new game!'
+resetButton.textContent = 'START NEW GAME !'
 resetButton.classList.add('reset-button');
 resetButton.addEventListener('click', () => location.reload(true))
 
-function getGameWinner() {
-    if (playerScoreCount === 5) {
-        gameWinner.textContent = `Player Wins in ${round} rounds!`
+function getGameWinner(numberOfWins) {
+    if (playerScoreCount === numberOfWins) {
+        gameWinner.textContent = `${playerName} Wins in ${round} rounds!`
         disableButtons();
         return gameWinner.appendChild(resetButton);
     }
-    if (computerScoreCount === 5) {
+    if (computerScoreCount === numberOfWins) {
         gameWinner.textContent = `Computer Wins in ${round} rounds!`
         disableButtons();
         return gameWinner.appendChild(resetButton);

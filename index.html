@@ -1,32 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href='https://fonts.googleapis.com/css?family=Architects Daughter' rel='stylesheet'>
+    <title>Rock, Paper & Scissors</title>
 </head>
+
 <body>
     <header>
-        <h1> Play Rock, Paper, Scissors!!</h1>
-        <div id="round-counter"> 
-            <p>Choose wisely!</p>
-        </div>
+        <h1> Play Rock, Paper, Scissors !</h1>
     </header>
-    <div id="options">
-        <div><button name="rock" id="rock">Rock</button></div>
-        <div><button name="paper" id="paper">Paper</button></div>
-        <div><button name="scissors" id="scissors">Scissors</button></div>
+    <div id="start-game">
+        <input id="player-name" type="text" name="player-name" placeholder="Please enter your name!">
+        <input id="number-of-rounds" type="number" name="number-of-rounds"
+            placeholder="Please enter the number of winning rounds!">
+        <button type="submit" id="btn-start">start game!</button>
     </div>
-    <div id="round-winner">Round Winner
-    </div>
-    <div id="current-score">
-        <p>Player Score:<p id="player-score">0</p>
-        <p>Computer Score:<p id="computer-score">0</p>
+    
+        <div id="options" class="options-hidden">
+            <img src="img/rock-paper-scissors-neon-icons.png" alt="rock paper scissors">    
+            <button name="rock" id="rock"></button>
+            <button name="paper" id="paper"></button>
+            <button name="scissors" id="scissors"></button>
+        </div>
+   
+    <div id="game-container" class="hide-game-container">
+        <div id="round-counter">
+            <p>Tap on a sign !<br>Round 1</p>
+        </div>
+        <div id="round-winner">
+        </div>
+        <div id="current-score">
+            <p id="set-name">Player Score:
+            <p id="player-score">0</p>
+            <p>Computer Score:
+            <p id="computer-score">0</p>
+        </div>
     </div>
     <div id="winner"></div>
-    <footer>Made by tahir mujic</footer>
-    
-<script src="javascript.js"></script>
+    <footer><a href="https://mujic.me">made by tahir mujic</a></footer>
+
+    <script src="javascript.js"></script>
 </body>
+
 </html>

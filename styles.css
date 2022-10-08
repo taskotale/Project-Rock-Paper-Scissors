@@ -65,13 +65,12 @@ input {
     border: solid;
 }
 
-/* img {
-    border-radius: 10px;
-    border: solid 2px yellow;
-    max-width: 98vw;
-    height: auto;
-} */
-
+#start-game {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
 #options {
     background-image: url(img/rock-paper-scissors-neon-icons.png);
     background-position: center;
@@ -81,6 +80,8 @@ input {
     justify-content: center;
     align-items: center;
     height: 300px;
+    border: 3px solid yellow;
+    border-radius: 5px;
 }
 
 .options-hidden button {

@@ -108,15 +108,18 @@ resetButton.textContent = 'START NEW GAME !'
 resetButton.classList.add('reset-button');
 resetButton.addEventListener('click', () => location.reload(true))
 
+let endGame = document.querySelector('#current-score');
 function getGameWinner(numberOfWins) {
     if (playerScoreCount === numberOfWins) {
         gameWinner.textContent = `${playerName} Wins in ${round} rounds!`
         disableButtons();
+        endGame.classList.add('end-game')
         return gameWinner.appendChild(resetButton);
     }
     if (computerScoreCount === numberOfWins) {
-        gameWinner.textContent = `Computer Wins in ${round} rounds!`
+        gameWinner.innerText = `Computer Wins in ${round} rounds!\r\n `
         disableButtons();
+        endGame.classList.add('end-game')
         return gameWinner.appendChild(resetButton);
     }
 }

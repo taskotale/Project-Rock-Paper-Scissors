@@ -1,6 +1,5 @@
 html {
     font-family: 'Architects Daughter';
-    height: 100vw;
 }
 
 body,
@@ -12,6 +11,8 @@ h1 {
 
 body {
     background-color: black;
+    display: flex;
+    flex-direction: column;
 }
 
 header {
@@ -25,10 +26,10 @@ header {
 footer {
     background-color: rgb(65, 145, 202);
     padding: 0.25rem;
-    text-align: center;
+    width: 100%;
     position: fixed;
     bottom: 0;
-    width: 100%;
+    text-align: center;
 }
 
 
@@ -64,15 +65,22 @@ input {
     border: solid;
 }
 
-img {
+/* img {
     border-radius: 10px;
-    width: 98vw;
-    border: solid 0.5vw yellow;
-}
+    border: solid 2px yellow;
+    max-width: 98vw;
+    height: auto;
+} */
 
 #options {
+    background-image: url(img/rock-paper-scissors-neon-icons.png);
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     height: 300px;
-    overflow: hidden;
 }
 
 .options-hidden button {
@@ -83,28 +91,25 @@ img {
     background-color: aliceblue;
     border-radius: 10px;
     height: 200px;
-    width: 105px;
+    width: 110px;
     opacity: 20%;
-    transform: translateY(-260px)translateX(25px);
 }
 
 #scissors {
     background-color: rgb(186, 26, 93);
     height: 200px;
     border-radius: 10px;
-    width: 120px;
+    width: 130px;
     opacity: 20%;
-    transform: translateY(-260px)translateX(-92px);
 }
 
 #paper {
     background-color: rgb(28, 116, 194);
     height: 200px;
     border-radius: 10px;
-    width: 110px;
+    width: 120px;
     opacity: 20%;
     z-index: 99;
-    transform: translateY(-260px)translateX(148px);
 }
 
 #round-counter,

@@ -59,6 +59,7 @@ let winnerDetector = '';
 function getRoundWinner(playerInput, computerInput) {
     let roundResult = '';
     if (playerInput === computerInput) {
+        winnerDetector = NaN;
         return roundResult = 'it\'s a tie!';
     }
     if (playerInput === 'rock' && computerInput === 'scissors' ||

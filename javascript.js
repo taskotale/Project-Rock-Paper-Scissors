@@ -66,10 +66,10 @@ function getRoundWinner(playerInput, computerInput) {
         playerInput === 'paper' && computerInput === 'rock' ||
         playerInput === 'scissors' && computerInput === 'paper') {
         winnerDetector = 'p';
-        return roundResult = `${playerName} wins, ${playerInput} beats ${computerInput}`;
+        return roundResult = `Computer choose: ${computerInput}\n ${playerName} wins, ${playerInput} beats ${computerInput}`;
     }
     winnerDetector = 'c';
-    return roundResult = `Computer wins, ${computerInput} beats ${playerInput}`;
+    return roundResult = `Computer choose: ${computerInput}\nComputer wins, ${computerInput} beats ${playerInput}`;
 }
 
 let roundCounter = document.querySelector('#round-counter');

@@ -118,7 +118,7 @@ function getGameWinner(numberOfWins) {
         return gameWinner.appendChild(resetButton);
     }
     if (computerScoreCount === numberOfWins) {
-        gameWinner.innerText = `Computer Wins in ${round} rounds!\r\n `
+        gameWinner.innerText = `Computer Wins \r\n `
         disableButtons();
         endGame.classList.add('end-game')
         return gameWinner.appendChild(resetButton);
